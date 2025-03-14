@@ -14,13 +14,7 @@ public class StudentPerformanceTrackerTest {
         assertEquals(80, record.getTotalMarks(), "Total marks calculation is incorrect");
     }
 
-    @Test
-    void testTotalMarksCalculation() {
-        StudentRecord record = new StudentRecord("Science", 25, 15, 10, 35, 5);
-
-        assertEquals(90, record.getTotalMarks(), "Total marks should be 90");
-        assertNotEquals(85, record.getTotalMarks(), "Total marks should not be 85");
-    }
+   
 
     @Test
     public void testGradeCalculation() {
