@@ -95,4 +95,12 @@ public class StudentPerformanceTrackerTest {
             fail("An unexpected exception occurred: " + e.getMessage());
         }
     }
+
+    @Test
+    void testTotalMarksCalculation() {
+        StudentRecord record = new StudentRecord("Science", 25, 15, 10, 35, 5);
+
+        assertEquals(90, record.getTotalMarks(), "Total marks should be 90");
+        assertNotEquals(85, record.getTotalMarks(), "Total marks should not be 85");
+    }
 }
