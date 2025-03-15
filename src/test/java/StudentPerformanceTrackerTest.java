@@ -84,13 +84,22 @@ public class StudentPerformanceTrackerTest {
         assertLinesMatch(expectedLines, actualLines, "Lines should match");
     }
 
-    
-
     @Test
     void testTotalMarksCalculation() {
         StudentRecord record = new StudentRecord("Science", 25, 15, 10, 35, 5);
 
         assertEquals(90, record.getTotalMarks(), "Total marks should be 90");
         assertNotEquals(85, record.getTotalMarks(), "Total marks should not be 85");
+    }
+    @Test
+    void testFailExample() {
+        try {
+            StudentRecord record = new StudentRecord("Math", 25, 15, 10, 35, 5);
+            if (record.getTotalMarks() < 0) {
+                fail("Total marks should not be negative");
+            }
+        } catch (Exception e) {
+            fail("An unexpected exception occurred: " + e.getMessage());
+        }
     }
 }
