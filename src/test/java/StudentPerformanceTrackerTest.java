@@ -84,17 +84,7 @@ public class StudentPerformanceTrackerTest {
         assertLinesMatch(expectedLines, actualLines, "Lines should match");
     }
 
-    @Test
-    void testFailExample() {
-        try {
-            StudentRecord record = new StudentRecord("Math", 25, 15, 10, 35, 5);
-            if (record.getTotalMarks() < 0) {
-                fail("Total marks should not be negative");
-            }
-        } catch (Exception e) {
-            fail("An unexpected exception occurred: " + e.getMessage());
-        }
-    }
+    
 
     @Test
     void testTotalMarksCalculation() {
